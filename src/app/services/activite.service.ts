@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 
 export class ActiviteService{
 
-  objectifs = ["Un element", "deux elements", "trois elements!"];
+  objectifs = ["Travailler", "Dormir", "Faire du sport"];
  
   removeItem(index: number){
     this.objectifs.splice(index,1);

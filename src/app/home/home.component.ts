@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   nbItems: number;
   btnText: string  = "Ajouter un item";
-  objectifText : string = "Mon nouvel objectif";
+  titreActivite : string = "Mon nouvel objectif";
 
   constructor( public myRouter: Router, public activiteService: ActiviteService) {
    }
@@ -35,9 +35,9 @@ export class HomeComponent implements OnInit {
 
   ajoutItem()
   {
-    this.activiteService.objectifs.push(this.objectifText);
+    this.activiteService.objectifs.push(this.titreActivite);
     this.nbItems = this.activiteService.objectifs.length;
-    this.objectifText = '';
+    this.titreActivite = '';
    // setTimeout(()=> {this.myRouter.navigate(['about']);}, 1000 );
 
   }
