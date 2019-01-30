@@ -8,13 +8,15 @@ import { AboutComponent } from './about/about.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ConsultActiviteComponent } from './consult-activite/consult-activite.component';
 import {ActiviteService} from './services/activite.service';
+import { ActiviteComponent } from './activite/activite.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    ConsultActiviteComponent
+    ConsultActiviteComponent,
+    ActiviteComponent
   ],
   imports: [
     BrowserAnimationsModule,

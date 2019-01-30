@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   nbItems: number;
   btnText: string  = "Ajouter un item";
   titreActivite : string = "Mon nouvel objectif";
-
+  descriptionActivite: string = "";
   constructor( public myRouter: Router, public activiteService: ActiviteService) {
    }
   ngOnInit() {

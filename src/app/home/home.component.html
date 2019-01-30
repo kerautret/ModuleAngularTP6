@@ -7,32 +7,23 @@
   </div>
 </div>
 
-
 <div class="container color-light" [@this.activiteService.objectifs]="this.activiteService.objectifs.length">
-    <div class="col">
-      <p class="sm"> Rajouter une nouvelle activitée </p>
+  <div class="col ">
       <form>
-        
-
-          <input type="text" class="form-control" name="item" placeholder="..." [(ngModel)]="titreActivite">
+          <input type="text" class="form-control" name="item" placeholder="Entrer le titre ici" [(ngModel)]="titreActivite">
       <br>
       <button type="button" class="btn btn-primary" [value]="btnText" (click)="ajoutItem()">Ajouter</button>
       </form>
+  </div>
+  <div class="col">
+      <textarea type="text" class="form-control" rows="3" name="item" placeholder="Entrer la description ici" [(ngModel)]="descriptionActivite"></textarea>
   </div>
 </div>
 
 <div class="container color-dark list">
   <div class="row" >
-
-    <div *ngFor="let o of this.activiteService.objectifs; let i = index " (click)="this.myRouter.navigate(['consultAct/'+i]);" class="col-sm-3" >
-          <div class="card border-primary mb-2" style="max-width: 50rem;">
-              <div class="card-header">Activité: {{i}}</div>
-              <div class="card-body text-primary">
-                <h5 class="card-title">{{o}}</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-         
+      <app-activite *ngFor="let o of this.activiteService.objectifs; let i = index " (click)="this.myRouter.navigate(['consultAct/'+i]);" class="col-sm-3" 
+      [nomActivite]="o"  [numActivite]="i"  [descriptionActivite]="'super description'" >
+      </app-activite>         
  </div>
 </div>
