@@ -7,7 +7,7 @@
   </div>
 </div>
 
-<div class="container color-light" [@this.activiteService.objectifs]="this.activiteService.objectifs.length">
+<div class="container color-light" >
   <div class="col ">
       <form>
           <input type="text" class="form-control" name="item" placeholder="Entrer le titre ici" [(ngModel)]="titreActivite">
@@ -20,7 +20,7 @@
   </div>
 </div>
 
-<div class="container color-dark list">
+<div class="container color-dark list" [@this.activiteService.tabActivite]="this.activiteService.tabActivite.length">
   <div class="row" >
       <app-activite *ngFor="let o of this.activiteService.tabActivite; let i = index " (click)="this.myRouter.navigate(['consultAct/'+i]);" class="col-sm-3" 
       [nomActivite]="o.nom"  [descriptionActivite]="o.description"  [numActivite]="i"  [descriptionActivite]="'super description'" >

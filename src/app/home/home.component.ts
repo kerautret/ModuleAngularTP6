@@ -8,7 +8,7 @@ import { ActiviteService } from '../services/activite.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'], 
   animations: [
-    trigger('this.activiteService.objectifs',[
+    trigger('this.activiteService.tabActivite',[
       transition('* => *',[
        query(':enter', style({opacity: 0}), {optional: true}),
        query(':enter', stagger('300ms',[
