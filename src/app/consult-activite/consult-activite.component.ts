@@ -14,6 +14,8 @@ export class ConsultActiviteComponent implements OnInit {
   recupParam2: string='';
   isEditing: boolean= false;
   inputField: string = "";
+  inputFieldDescription: string = "";
+
   constructor(private actR: ActivatedRoute, public activiteService: ActiviteService, public myRouter: Router) {
     this.recupParam = actR.snapshot.params["param"];
     this.recupParam2 = actR.snapshot.params["param2"];
@@ -21,12 +23,14 @@ export class ConsultActiviteComponent implements OnInit {
   modifier()
   {
     this.isEditing = true;
-    this.inputField = this.activiteService.objectifs[this.recupParam];
+    this.inputField = this.activiteService.tabActivite[this.recupParam].nom;
+    this.inputFieldDescription = this.activiteService.tabActivite[this.recupParam].description;
+
   }
   save()
   {
     this.isEditing = false;
-    this.activiteService.editItem(+this.recupParam, this.inputField);
+    this.activiteService.editItem(+this.recupParam, this.inputField, this.inputFieldDescription);
   }
   ngOnInit() {
   }

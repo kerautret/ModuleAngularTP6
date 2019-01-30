@@ -3,13 +3,28 @@ import {Router} from '@angular/router';
 
 export class ActiviteService{
 
-  objectifs = ["Travailler", "Dormir", "Faire du sport"];
- 
+  tabActivite = [
+    {
+      nom : "Faire du sport",
+      description: "avec du beau temps" 
+    },
+    {
+      nom : "Travailler Angular",
+      description: "pour être super fort" 
+    },
+    {
+      nom : "Se promener",
+      description: "à la mer..." 
+    }
+
+  ]
+
   removeItem(index: number){
-    this.objectifs.splice(index,1);
+    this.tabActivite.splice(index,1);
   }
 
-  editItem(index: number, newVal: string){
-    this.objectifs[index] = newVal;
+  editItem(index: number, nouveauNom: string, nouvelDescription: string){
+    this.tabActivite[index].nom = nouveauNom;
+    this.tabActivite[index].description = nouvelDescription;
   }
 }
