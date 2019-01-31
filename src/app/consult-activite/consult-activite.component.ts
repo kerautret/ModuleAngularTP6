@@ -31,6 +31,8 @@ export class ConsultActiviteComponent implements OnInit {
   {
     this.isEditing = false;
     this.activiteService.editItem(+this.recupParam, this.inputField, this.inputFieldDescription);
+    this.activiteService.saveActiviteToServer();
+
   }
 
   
