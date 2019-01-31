@@ -55,4 +55,18 @@ export class ActiviteService{
       );
 }
 
+loadActiviteToServer() {
+  this.httpClient
+    .get<any>('https://basetp6.firebaseio.com/activite.json')
+    .subscribe(
+      (response) => {
+       this.tabActivite = response;
+        console.log('Enregistrement terminé !');
+      },
+      (error) => {
+        console.log('Erreur ! : ' + error);
+      }
+    );
+}
+
 }
