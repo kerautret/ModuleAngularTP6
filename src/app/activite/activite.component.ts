@@ -15,6 +15,11 @@ export class ActiviteComponent implements OnInit {
 
   constructor(public myRouter: Router, public activiteService: ActiviteService) { }
 
+  toogle()
+ {
+   this.estActif= !this.estActif;
+  this.activiteService.toogleActive(this.numActivite);
+ } 
   ngOnInit() {
   }
   

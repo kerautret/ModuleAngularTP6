@@ -8,7 +8,7 @@
 </div>
 
 <div class="container color-light" >
-  <div class="col ">
+  <div class="col">
       <form>
           <input type="text" class="form-control" name="item" placeholder="Entrer le titre ici" [(ngModel)]="titreActivite">
       <br>
@@ -23,7 +23,7 @@
 <div class="container color-dark list" [@this.activiteService.tabActivite]="this.activiteService.tabActivite.length">
   <div class="row" >
       <app-activite *ngFor="let o of this.activiteService.tabActivite; let i = index "  class="col-sm-4" 
-      [nomActivite]="o.nom"  [descriptionActivite]="o.description"  [numActivite]="i"  [descriptionActivite]="'super description'"  >
+      [estActif]="o.acti" [nomActivite]="o.nom"  [descriptionActivite]="o.description"  [numActivite]="i"  [descriptionActivite]="'super description'"  >
       </app-activite>         
  </div>
 </div>

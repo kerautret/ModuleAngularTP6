@@ -2,11 +2,11 @@
 
 
 <div >
-    <div class="card border-primary mb-2" style="max-width: 50rem;">
+    <div [ngClass]="{'card bg-light mb-3': this.estActif,'card bg-dark mb-3': !this.estActif} " style="max-width: 50rem;">
         <div class="card-header">Activité: {{numActivite}}
-          <button type="button" class="btn btn-primary btn-sm float-right" > done </button>
+          <button type="button" [ngClass]="{ 'btn btn-secondary btn-sm float-right': !this.estActif, 'btn btn-primary btn-sm float-right': this.estActif}"  (click)="this.toogle()" > done </button>
         </div>
-        <div (click)="this.myRouter.navigate(['consultAct/'+numActivite]);" [ngClass]="{'card-body text-primary': this.estActif , 'card-body text-dark': !this.estActif}" >
+        <div (click)="this.myRouter.navigate(['consultAct/'+numActivite]);"  >
           <h5 class="card-title">{{nomActivite}}</h5>
           <p class="card-text" >{{descriptionActivite}}</p>
         </div>

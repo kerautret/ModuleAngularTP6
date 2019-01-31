@@ -7,18 +7,18 @@ export class ActiviteService{
     {
       nom : "Faire du sport",
       description: "avec du beau temps" ,
-      active: true
+      acti: true
     },
     {
       nom : "Travailler Angular",
       description: "pour être super fort" ,
-      active: true
+      acti: true
 
     },
     {
       nom : "Se promener",
       description: "à la mer..." ,
-      active: true
+      acti: false
     }
 
   ]
@@ -32,8 +32,10 @@ export class ActiviteService{
     this.tabActivite[index].description = nouvelDescription;
   }
   toogleActive(index: number){
-    this.tabActivite[index].active =  !this.tabActivite[index].active;
+    this.tabActivite[index].acti =  !(this.tabActivite[index].acti);
+   
+
   }
 
-  
+
 }

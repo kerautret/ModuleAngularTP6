@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
 
   ajoutItem()
   {
-    this.activiteService.tabActivite.push({nom: this.titreActivite, description: this.descriptionActivite, active: true});
+    this.activiteService.tabActivite.push({nom: this.titreActivite, description: this.descriptionActivite, acti: true});
     this.nbItems = this.activiteService.tabActivite.length;
     this.titreActivite = '';
    // setTimeout(()=> {this.myRouter.navigate(['about']);}, 1000 );
