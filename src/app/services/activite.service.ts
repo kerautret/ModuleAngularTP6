@@ -1,5 +1,10 @@
 import {Router} from '@angular/router';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
+import { HttpClient } from '@angular/common/http';
 
+
+@Injectable()
 
 export class ActiviteService{
 
@@ -22,6 +27,8 @@ export class ActiviteService{
     }
 
   ]
+  
+  constructor(private httpClient: HttpClient) { }
 
   removeItem(index: number){
     this.tabActivite.splice(index,1);
