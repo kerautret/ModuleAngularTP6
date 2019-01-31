@@ -6,15 +6,19 @@ export class ActiviteService{
   tabActivite = [
     {
       nom : "Faire du sport",
-      description: "avec du beau temps" 
+      description: "avec du beau temps" ,
+      active: true
     },
     {
       nom : "Travailler Angular",
-      description: "pour être super fort" 
+      description: "pour être super fort" ,
+      active: true
+
     },
     {
       nom : "Se promener",
-      description: "à la mer..." 
+      description: "à la mer..." ,
+      active: true
     }
 
   ]
@@ -27,4 +31,9 @@ export class ActiviteService{
     this.tabActivite[index].nom = nouveauNom;
     this.tabActivite[index].description = nouvelDescription;
   }
+  toogleActive(index: number){
+    this.tabActivite[index].active =  !this.tabActivite[index].active;
+  }
+
+  
 }

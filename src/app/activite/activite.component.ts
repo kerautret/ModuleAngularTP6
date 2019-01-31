@@ -11,9 +11,12 @@ export class ActiviteComponent implements OnInit {
   @Input() nomActivite: string="";
   @Input() numActivite: number=0;
   @Input() descriptionActivite: string="";
+  @Input() estActif: boolean=true;
+
   constructor(public myRouter: Router, public activiteService: ActiviteService) { }
 
   ngOnInit() {
   }
+  
 
 }

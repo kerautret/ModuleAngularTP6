@@ -3,10 +3,12 @@
 
 <div >
     <div class="card border-primary mb-2" style="max-width: 50rem;">
-        <div class="card-header">Activité: {{numActivite}}</div>
-        <div class="card-body text-primary">
+        <div class="card-header">Activité: {{numActivite}}
+          <button type="button" class="btn btn-primary btn-sm float-right" > done </button>
+        </div>
+        <div (click)="this.myRouter.navigate(['consultAct/'+numActivite]);" [ngClass]="{'card-body text-primary': this.estActif , 'card-body text-dark': !this.estActif}" >
           <h5 class="card-title">{{nomActivite}}</h5>
-          <p class="card-text">{{descriptionActivite}}</p>
+          <p class="card-text" >{{descriptionActivite}}</p>
         </div>
       </div>
  </div>
