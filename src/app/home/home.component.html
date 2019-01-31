@@ -13,6 +13,8 @@
           <input type="text" class="form-control" name="item" placeholder="Entrer le titre ici" [(ngModel)]="titreActivite">
       <br>
       <button type="button" class="btn btn-primary" [value]="btnText" (click)="ajoutItem()">Ajouter</button>
+      <button class="btn btn-primary"
+        (click)="this.activiteService.saveActiviteToServer();">Enregistrer les appareils</button>
       </form>
   </div>
   <div class="col">

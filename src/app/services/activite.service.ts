@@ -1,6 +1,5 @@
 import {Router} from '@angular/router';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -29,7 +28,7 @@ export class ActiviteService{
   ]
   
   constructor(private httpClient: HttpClient) { }
-
+ 
   removeItem(index: number){
     this.tabActivite.splice(index,1);
   }
@@ -43,6 +42,17 @@ export class ActiviteService{
    
 
   }
-
+  saveActiviteToServer() {
+    this.httpClient
+      .post('https://basetp6.firebaseio.com/activite.json', this.tabActivite)
+      .subscribe(
+        () => {
+          console.log('Enregistrement terminé !');
+        },
+        (error) => {
+          console.log('Erreur ! : ' + error);
+        }
+      );
+}
 
 }
