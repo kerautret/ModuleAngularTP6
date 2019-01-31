@@ -44,7 +44,7 @@ export class ActiviteService{
   }
   saveActiviteToServer() {
     this.httpClient
-      .post('https://basetp6.firebaseio.com/activite.json', this.tabActivite)
+      .put('https://basetp6.firebaseio.com/activite.json', this.tabActivite)
       .subscribe(
         () => {
           console.log('Enregistrement terminé !');
