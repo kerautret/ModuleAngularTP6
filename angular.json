@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ModuleAngularTP5": {
+    "ModuleAngularTP6": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ModuleAngularTP5",
+            "outputPath": "dist/ModuleAngularTP6",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ModuleAngularTP5:build"
+            "browserTarget": "ModuleAngularTP6:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ModuleAngularTP5:build:production"
+              "browserTarget": "ModuleAngularTP6:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ModuleAngularTP5:build"
+            "browserTarget": "ModuleAngularTP6:build"
           }
         },
         "test": {
@@ -107,7 +107,7 @@
         }
       }
     },
-    "ModuleAngularTP5-e2e": {
+    "ModuleAngularTP6-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ModuleAngularTP5:serve"
+            "devServerTarget": "ModuleAngularTP6:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ModuleAngularTP5:serve:production"
+              "devServerTarget": "ModuleAngularTP6:serve:production"
             }
           }
         },
@@ -136,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "ModuleAngularTP5"
+  "defaultProject": "ModuleAngularTP6"
 }
