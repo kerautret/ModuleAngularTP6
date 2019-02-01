@@ -31,7 +31,10 @@ export class HomeComponent implements OnInit {
    }
   ngOnInit() {
     this.nbItems = this.activiteService.tabActivite.length;
-    this.activiteService.loadActiviteToServer();
+    if (! this.activiteService.isUploading)
+    {
+      this.activiteService.loadActiviteToServer();
+    }
   }
 
   ajoutItem()

@@ -6,7 +6,7 @@
         <input  *ngIf="this.isEditing" type="text" class="txt" name="item" placeholder="..." [(ngModel)]="inputFieldDescription"> </li>
    
 </ol>
-<button type="button" class="btn btn-danger"  (click)="this.activiteService.removeItem(this.recupParam);this.myRouter.navigate([''])">Supprimer</button>
+<button type="button" class="btn btn-danger"  (click)="this.activiteService.removeItem(this.recupParam); this.myRouter.navigate(['']);">Supprimer</button>
 <button type="button" class="btn btn-primary" *ngIf="!this.isEditing" (click)="modifier()">Modifier</button>
 <button type="button" class="btn btn-primary" *ngIf="this.isEditing" (click)="save()">Sauvegarder</button>
 <button type="button" class="btn btn-success"  (click)="this.myRouter.navigate([''])">Retour</button>

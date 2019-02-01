@@ -24,15 +24,14 @@ export class ActiviteService{
       description: "à la mer..." ,
       acti: false
     }
-
   ]
-  
+  isUploading = false;
   constructor(private httpClient: HttpClient) { }
  
-  removeItem(index: number){
+  async removeItem(index: number){
     this.tabActivite.splice(index,1);
-    this.saveActiviteToServer();
-
+    return new Promise( resolve => this.saveActiviteToServer() );
+  
   }
 
   editItem(index: number, nouveauNom: string, nouvelDescription: string){
@@ -44,11 +43,13 @@ export class ActiviteService{
     this.saveActiviteToServer();   
   }
   saveActiviteToServer() {
+    this.isUploading=true;
     this.httpClient
       .put('https://basetp6.firebaseio.com/activite.json', this.tabActivite)
       .subscribe(
         () => {
           console.log('Enregistrement terminé !');
+          this.isUploading = false;
         },
         (error) => {
           console.log('Erreur ! : ' + error);
