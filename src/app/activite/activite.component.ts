@@ -21,8 +21,8 @@ export class ActiviteComponent implements OnInit {
   toogle()
  {
    this.estActif= !this.estActif;
-  this.activiteService.toogleActive(this.numActivite);
- } 
+    this.activiteService.toogleActive(this.numActivite);
+  } 
  
   ngOnInit(){
     const counter = interval(2000);

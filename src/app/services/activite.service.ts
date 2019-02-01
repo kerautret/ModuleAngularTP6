@@ -31,6 +31,8 @@ export class ActiviteService{
  
   removeItem(index: number){
     this.tabActivite.splice(index,1);
+    this.saveActiviteToServer();
+
   }
 
   editItem(index: number, nouveauNom: string, nouvelDescription: string){
@@ -39,8 +41,7 @@ export class ActiviteService{
   }
   toogleActive(index: number){
     this.tabActivite[index].acti =  !(this.tabActivite[index].acti);
-   
-
+    this.saveActiviteToServer();   
   }
   saveActiviteToServer() {
     this.httpClient

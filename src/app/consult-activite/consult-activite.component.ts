@@ -25,14 +25,12 @@ export class ConsultActiviteComponent implements OnInit {
     this.isEditing = true;
     this.inputField = this.activiteService.tabActivite[this.recupParam].nom;
     this.inputFieldDescription = this.activiteService.tabActivite[this.recupParam].description;
-
   }
   save()
   {
     this.isEditing = false;
     this.activiteService.editItem(+this.recupParam, this.inputField, this.inputFieldDescription);
     this.activiteService.saveActiviteToServer();
-
   }
 
   

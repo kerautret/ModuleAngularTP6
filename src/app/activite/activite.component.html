@@ -1,14 +1,12 @@
 
 
-    <div [ngClass]="{'card bg-light mb-3': true,'card bg-dark mb-3': false}" style="max-width: 50rem;">
-      <div [ngClass]="{'card bg-light mb-3': this.estActif,'card bg-dark mb-3': !this.estActif} " style="max-width: 50rem;">
 
     <div [ngClass]=" {'card':true, 'bg-light': this.estActif,'mb-3': true}" style="max-width: 50rem;">
 
         <div class="card-header">Activité: {{numActivite}}
           <button type="button" [ngClass]="{'btn': true,  'btn-primary':this.estActif,'btn-secondary':!this.estActif, 'float-right':true,  'btn-sm': true}"  (click)="this.toogle()" > done </button>
         </div>
-        <div class="card-body" (click)="this.myRouter.navigate(['consultAct/'+numActivite]);"  >
+        <div [ngClass]="{'card-body': true, 'text-primary': this.estActif}" (click)="this.myRouter.navigate(['consultAct/'+numActivite]);"  >
           <h5 class="card-title">{{nomActivite}}</h5>
           <p class="card-text" >{{descriptionActivite}} ({{secondes}})</p>
         </div>
