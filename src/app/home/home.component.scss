@@ -9,6 +9,12 @@
     padding: 2em 1em;
     color: rgb(22, 23, 24); 
 }
+.container.bt {
+    display: grid;
+    grid-template-columns: 100% auto; 
+    color: rgb(22, 23, 24);  
+}
+
 .btn{
     margin-left: 1em ;
     margin-bottom: 1em ;
@@ -17,6 +23,7 @@
 .col {
     padding: .4em 1.0em;
 }
+
 
 .color-dark {
     background: #2885C4;
