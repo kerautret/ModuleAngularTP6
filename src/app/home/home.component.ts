@@ -39,6 +39,8 @@ export class HomeComponent implements OnInit {
     this.activiteService.tabActivite.push({nom: this.titreActivite, description: this.descriptionActivite, acti: true});
     this.nbItems = this.activiteService.tabActivite.length;
     this.titreActivite = '';
+    this.activiteService.saveActiviteToServer();
+
    // setTimeout(()=> {this.myRouter.navigate(['about']);}, 1000 );
 
   }
